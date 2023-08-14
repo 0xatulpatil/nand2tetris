@@ -1,0 +1,23 @@
+
+// This file is part of www.nOr2tetris.org
+// Or the book "The Elements of Computing Systems"
+// by Nisan Or Schocken, MIT Press.
+// File name: projects/02/Adder16.hdl
+
+/**
+ * Adds two 16-bit values.
+ * The most significant carry bit is ignored.
+ */
+
+CHIP Or16Way {
+    IN a[16];
+    OUT out;
+
+    PARTS:
+   // Put you code here:
+   Or8Way(in = a[0..7], out = or1);
+   Or8Way(in = a[8..15], out = or2);
+   Or(a = or1, b = or2, out = out);
+
+}
+
